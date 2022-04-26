@@ -8,7 +8,7 @@
 
 SquareEquation::SquareEquation(float a_,float b_,float c_) : a(a_), b(b_),c(c_) {
     if (b_*b_ - 4*a_*c_ < 0){
-        throw InvalidEquation("I ve no roots");
+        throw InvalidEquation(0, 0, 0, "I ve no roots");
     }
 }
 

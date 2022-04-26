@@ -7,11 +7,19 @@
 
 
 #include <stdexcept>
+#include <iostream>
+#include "SquareEquation.h"
 
 class InvalidEquation
-        : std::invalid_argument { ;
+        : std::invalid_argument,
+        SquareEquation {
 public:
-    InvalidEquation(const char * what):std::invalid_argument(what){}
+    InvalidEquation(float a, float b, float c, const char *what) : SquareEquation(a, b, c),
+                                                                   std::invalid_argument(what)
+    {
+        std :: cout << "Вызвано исключение Для уравнения, a="<< a << " b=" << b << " c=" << c << std::endl
+            <<"Причина:"<< what << std::endl;
+    }
 };
 
 
